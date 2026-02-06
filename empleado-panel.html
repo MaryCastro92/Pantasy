@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel de Empleados - Pantasy</title>
+    <link rel="stylesheet" href="estilos/estilos.css">
+</head>
+<body class="fondo-blanco">
+    <header>
+        <h1>⚔️ Pantasy - Panel Interno de Empleados ⚔️</h1>
+        <nav>
+            <a href="pantasy.html">Inicio</a>
+            <a href="#" onclick="cerrarSesion()">Cerrar Sesión</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="contenido-pagina contenido-empleados">
+            <h2>Bienvenido al Panel de Empleados</h2>
+            <p id="usuario-bienvenida">Bienvenido, empleado</p>
+
+            <div class="menu-empleados">
+                <a href="empleado-horarios.html" class="tarjeta-menu">
+                    <h3>⏰ Horarios</h3>
+                    <p>Consulta tu horario de trabajo y cambios programados</p>
+                </a>
+
+                <a href="empleado-organigrama.html" class="tarjeta-menu">
+                    <h3>📊 Organigrama</h3>
+                    <p>Estructura de la empresa y departamentos</p>
+                </a>
+
+                <a href="empleado-normas.html" class="tarjeta-menu">
+                    <h3>📋 Normas de Trabajo</h3>
+                    <p>Políticas y regulaciones internas</p>
+                </a>
+
+                <a href="empleado-fichaje.html" class="tarjeta-menu">
+                    <h3>👤 Fichaje</h3>
+                    <p>Registra tu entrada y salida</p>
+                </a>
+
+                <a href="empleado-formacion.html" class="tarjeta-menu">
+                    <h3>📚 Cursos y Formaciones</h3>
+                    <p>Accede a programas de capacitación y desarrollo</p>
+                </a>
+
+                <a href="empleado-noticias.html" class="tarjeta-menu">
+                    <h3>📰 Noticias de la Empresa</h3>
+                    <p>Últimas actualidades y comunicados</p>
+                </a>
+
+                <a href="empleado-ecologia.html" class="tarjeta-menu">
+                    <h3>🌱 Compromiso Ecológico</h3>
+                    <p>Iniciativas de sostenibilidad y compromiso ambiental</p>
+                </a>
+
+                <a href="empleado-innovacion.html" class="tarjeta-menu">
+                    <h3>🚀 I+D+I</h3>
+                    <p>Investigación, Desarrollo e Innovación</p>
+                </a>
+            </div>
+
+            <div class="tarjeta-perfil-empleado">
+                <h3>Mis Datos</h3>
+                <p><strong>Email:</strong> <span id="email-display">---</span></p>
+                <p><strong>Departamento:</strong> Operaciones</p>
+                <p><strong>Puesto:</strong> Aventurero Especializado</p>
+                <p><strong>Antigüedad:</strong> 2 años</p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Verificar sesión
+        function verificarSesion() {
+            if (localStorage.getItem('empleado-loggedin') !== 'true') {
+                window.location.href = 'empleado-acceso.html';
+                return;
+            }
+            
+            const email = localStorage.getItem('empleado-email');
+            document.getElementById('usuario-bienvenida').textContent = `Bienvenido, ${email}`;
+            document.getElementById('email-display').textContent = email;
+        }
+
+        function cerrarSesion() {
+            localStorage.removeItem('empleado-loggedin');
+            localStorage.removeItem('empleado-email');
+            window.location.href = 'pantasy.html';
+        }
+
+        verificarSesion();
+    </script>
+</body>
+</html>

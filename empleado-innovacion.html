@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I+D+I - Pantasy</title>
+    <link rel="stylesheet" href="estilos/estilos.css">
+</head>
+<body class="fondo-blanco">
+    <header>
+        <h1>🚀 I+D+I - Investigación, Desarrollo e Innovación 🚀</h1>
+        <nav>
+            <a href="empleado-panel.html">Volver al Panel</a>
+            <a href="#" onclick="cerrarSesion()">Cerrar Sesión</a>
+        </nav>
+    </header>
+
+  <main>
+    <div class="contenido-pagina contenido-empleados">
+        <h2>Gremio Tecnológico: La Magia 4.0 en Pantasy</h2>
+        
+        <div class="tarjeta-perfil-empleado">
+            <h3>💡 Innovación: "El Nuevo Gremio Digital"</h3>
+            <p>En Pantasy, la tecnología potencia nuestra mística. Nos reinventamos hacia una <strong>Pantasy 4.0</strong> donde el "Oráculo de Consumo" y el "Bibliotecario Virtual" elevan la experiencia artesanal.</p>
+        </div>
+
+        <div class="tarjeta-perfil-empleado">
+            <h3>🎓 Programa de Formación: "El Despertar del Héroe"</h3>
+            <p>Para que la magia fluya, todo aventurero debe dominar las artes digitales del gremio. Nuestras formaciones clave incluyen:</p>
+            <ul>
+                <li><strong>Maestría en "Segunda Vista" (RA):</strong> Capacitación en el uso de dispositivos de Realidad Aumentada para la visualización de menús vivos y asistencia en la búsqueda de libros.</li>
+                <li><strong>Sintonía con la "Panadería Sensible" (IoT):</strong> Formación técnica para interpretar los datos de los sensores de los silos y hornos inteligentes, optimizando el consumo energético.</li>
+                <li><strong>Interpretación del "Oráculo" (Big Data):</strong> Talleres sobre cómo utilizar las predicciones de demanda para reducir el desperdicio alimentario y gestionar el stock.</li>
+                <li><strong>Interacción con el "Bibliotecario Virtual" (IA):</strong> Entrenamiento en el sistema de recomendación literaria para ofrecer consejos personalizados basados en el perfil del cliente.</li>
+                <li><strong>Protocolos de "Autómatas del Gremio":</strong> Instrucciones de seguridad y colaboración con sistemas robóticos para tareas de transporte y logística interna.</li>
+            </ul>
+        </div>
+
+        <div class="tarjeta-perfil-empleado">
+            <h3>🔗 Recursos de Aprendizaje para Aventureros</h3>
+            <p>Ponemos a tu disposición las herramientas necesarias para tu evolución profesional:</p>
+    <script>
+        function verificarSesion() {
+            if (localStorage.getItem('empleado-loggedin') !== 'true') {
+                window.location.href = 'empleado-acceso.html';
+            }
+        }
+
+        function cerrarSesion() {
+            localStorage.removeItem('empleado-loggedin');
+            localStorage.removeItem('empleado-email');
+            window.location.href = 'pantasy.html';
+        }
+
+        verificarSesion();
+    </script>
+</body>
+</html>

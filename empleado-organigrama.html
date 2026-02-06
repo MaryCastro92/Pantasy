@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Organigrama - Pantasy</title>
+    <link rel="stylesheet" href="estilos/estilos.css">
+</head>
+<body class="fondo-blanco">
+    <header>
+        <h1>⚔️ Pantasy - Organigrama ⚔️</h1>
+        <nav>
+            <a href="empleado-panel.html">Volver al Panel</a>
+            <a href="#" onclick="cerrarSesion()">Cerrar Sesión</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="contenido-pagina contenido-empleados">
+            <h2>📊 Estructura Organizacional</h2>
+
+            <div class="organigrama">
+                <div class="nivel-1">
+                    <div class="cargo">
+                        <h3>CEO / Fundador</h3>
+                        <p>Rey Arturo</p>
+                    </div>
+                </div>
+
+                <div class="linea-vertical"></div>
+
+                <div class="nivel-2">
+                    <div class="cargo">
+                        <h3>Dirección General</h3>
+                        <p>Merlin Arcano</p>
+                    </div>
+                    <div class="cargo">
+                        <h3>Dirección de RRHH</h3>
+                        <p>Dama Lancelota</p>
+                    </div>
+                    <div class="cargo">
+                        <h3>Dirección Financiera</h3>
+                        <p>Contador Dragón</p>
+                    </div>
+                </div>
+
+                <div class="linea-vertical"></div>
+
+                <div class="nivel-3">
+                    <div class="seccion-departamento">
+                        <h4>Departamento de Operaciones</h4>
+                        <div class="cargo-secundario">
+                            <p>👤 Jefe: Capitán Héroe</p>
+                            <p>👥 Empleados: 8</p>
+                            <ul>
+                                <li>Aventurero Especializado (TÚ)</li>
+                                <li>Aventurero Junior</li>
+                                <li>Técnico de Seguridad</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="seccion-departamento">
+                        <h4>Departamento de Ventas</h4>
+                        <div class="cargo-secundario">
+                            <p>👤 Jefe: Bardo Vendedor</p>
+                            <p>👥 Empleados: 6</p>
+                            <ul>
+                                <li>Vendedor Senior</li>
+                                <li>Vendedor Junior</li>
+                                <li>Asesor Comercial</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="seccion-departamento">
+                        <h4>Departamento de Administración</h4>
+                        <div class="cargo-secundario">
+                            <p>👤 Jefe: Escriba Oficial</p>
+                            <p>👥 Empleados: 5</p>
+                            <ul>
+                                <li>Administrativo Senior</li>
+                                <li>Auxiliar Administrativo</li>
+                                <li>Gestor Documental</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="directorio-ejecutivo">
+                <h3>Directorio Ejecutivo</h3>
+                <table class="tabla-directorio">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Puesto</th>
+                            <th>Departamento</th>
+                            <th>Contacto</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Rey Arturo</td>
+                            <td>CEO / Fundador</td>
+                            <td>Dirección General</td>
+                            <td>arturo@pantasy.com</td>
+                        </tr>
+                        <tr>
+                            <td>Merlin Arcano</td>
+                            <td>Director General</td>
+                            <td>Dirección General</td>
+                            <td>merlin@pantasy.com</td>
+                        </tr>
+                        <tr>
+                            <td>Dama Lancelota</td>
+                            <td>Directora de RRHH</td>
+                            <td>Recursos Humanos</td>
+                            <td>rrhh@pantasy.com</td>
+                        </tr>
+                        <tr>
+                            <td>Contador Dragón</td>
+                            <td>Director Financiero</td>
+                            <td>Finanzas</td>
+                            <td>finanzas@pantasy.com</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function verificarSesion() {
+            if (localStorage.getItem('empleado-loggedin') !== 'true') {
+                window.location.href = 'empleado-acceso.html';
+            }
+        }
+
+        function cerrarSesion() {
+            localStorage.removeItem('empleado-loggedin');
+            localStorage.removeItem('empleado-email');
+            window.location.href = 'pantasy.html';
+        }
+
+        verificarSesion();
+    </script>
+</body>
+</html>

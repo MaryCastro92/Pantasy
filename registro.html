@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro - Pantasy</title>
+    <link rel="stylesheet" href="estilos/estilos.css">
+</head>
+<body>
+    <header>
+        <h1>⚔️ Pantasy - Refugio del Aventurero ⚔️</h1>
+        <p style="color: var(--oro-ambar); margin: 5px 0; font-style: italic;">Un Rincón para Héroes y Soñadores</p>
+        <nav>
+            <a href="pantasy.html">Inicio</a>
+            <a href="libreria.html">El Mercado de Tomos</a>
+            <a href="forja.html">La Forja del Sabor</a>
+            <a href="blog.html">Crónicas del Bosque</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="contenido-pagina">
+            <a href="pantasy.html" class="volver">← Volver al inicio</a>
+            
+            <div style="display: flex; gap: 20px; margin: 20px 0; flex-wrap: wrap;">
+                <div class="tarjeta-perfil" style="flex: 1; min-width: 300px;">
+                    <h3>👤 Usuario Aventurero</h3>
+                    <p>Crea tu cuenta de aventurero y accede a todos los misterios del reino.</p>
+                    <button onclick="mostrarRegistroAventurero()" class="boton-enviar" style="width: 100%;">Registrarse como Aventurero</button>
+                </div>
+            </div>
+            
+            <h2 id="titulo-registro">Registro de Empleados y Aventureros</h2>
+            <p id="descripcion-registro">Crea tu cuenta de aventurero y accede a todos los misterios del reino.</p>
+            
+            <form class="formulario-registro">
+                <div class="grupo-formulario">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+                </div>
+
+                <div class="grupo-formulario">
+                    <label for="apellidos">Apellidos:</label>
+                    <input type="text" id="apellidos" name="apellidos" required placeholder="Tus apellidos">
+                </div>
+
+                <div class="grupo-formulario">
+                    <label for="dni">DNI:</label>
+                    <input type="text" id="dni" name="dni" required placeholder="Ej: 12345678A">
+                </div>
+
+                <div class="grupo-formulario">
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" required placeholder="tu@correo.com">
+                </div>
+
+                <div class="grupo-formulario">
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" required placeholder="Elige una contraseña segura">
+                </div>
+
+                <div class="grupo-formulario">
+                    <label for="confirmar-password">Confirmar contraseña:</label>
+                    <input type="password" id="confirmar-password" name="confirmar-password" required placeholder="Repite la contraseña">
+                </div>
+
+                <div class="grupo-formulario">
+                    <label for="clase">Clase de personaje:</label>
+                    <select id="clase" name="clase" required>
+                        <option value="">Selecciona una clase...</option>
+                        <option value="guerrero">Guerrero</option>
+                        <option value="mago">Mago</option>
+                        <option value="pícaro">Pícaro</option>
+                        <option value="clérigo">Clérigo</option>
+                        <option value="paladín">Paladín</option>
+                        <option value="bardo">Bardo</option>
+                    </select>
+                </div>
+
+                <div class="grupo-formulario">
+                    <label for="reino">Reino de origen:</label>
+                    <input type="text" id="reino" name="reino" placeholder="De dónde vienes">
+                </div>
+
+                <div class="grupo-formulario checkbox">
+                    <input type="checkbox" id="terminos" name="terminos" required>
+                    <label for="terminos">Acepto los términos y condiciones de Pantasy</label>
+                </div>
+
+                <div class="grupo-formulario checkbox">
+                    <input type="checkbox" id="newsletter" name="newsletter">
+                    <label for="newsletter">Deseo recibir noticias sobre nuevas aventuras</label>
+                </div>
+
+                <button type="submit" class="boton-enviar">Crear mi cuenta</button>
+                <p class="enlace-login">¿Ya tienes cuenta? <a href="login.html">Inicia sesión aquí</a></p>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw-resiliencia.js');
+            });
+        }
+
+        // Mostrar/ocultar formulario de registro de aventurero
+        function mostrarRegistroAventurero() {
+            document.querySelector('.formulario-registro').style.display = 'block';
+            document.querySelector('.formulario-registro').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Validación básica del formulario
+        document.querySelector('.formulario-registro').addEventListener('submit', function(e) {
+            const password = document.getElementById('password').value;
+            const confirmar = document.getElementById('confirmar-password').value;
+            
+            if (password !== confirmar) {
+                e.preventDefault();
+                alert('Las contraseñas no coinciden');
+            }
+        });
+    </script>
+</body>
+</html>

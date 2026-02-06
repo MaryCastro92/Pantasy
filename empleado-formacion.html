@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formación y Cursos - Pantasy</title>
+    <link rel="stylesheet" href="estilos/estilos.css">
+</head>
+<body class="fondo-blanco">
+    <header>
+        <h1>⚔️ Pantasy - Cursos y Formaciones ⚔️</h1>
+        <nav>
+            <a href="empleado-panel.html">Volver al Panel</a>
+            <a href="#" onclick="cerrarSesion()">Cerrar Sesión</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="contenido-pagina contenido-empleados">
+            <h2>📚 Cursos y Formaciones Disponibles</h2>
+
+            <div class="filtros-cursos">
+                <button class="filtro-activo" onclick="filtrarCursos('todos')">Todos</button>
+                <button class="filtro" onclick="filtrarCursos('disponibles')">Disponibles</button>
+                <button class="filtro" onclick="filtrarCursos('en-curso')">En Curso</button>
+                <button class="filtro" onclick="filtrarCursos('completados')">Completados</button>
+            </div>
+
+            <div class="grid-cursos">
+                <div class="tarjeta-curso">
+                    <div class="estado-curso estado-disponible">Disponible</div>
+                    <h3>Seguridad en el Trabajo</h3>
+                    <p class="duracion">⏱ 8 horas</p>
+                    <p class="descripcion">Curso obligatorio sobre protocolos de seguridad y prevención de riesgos laborales.</p>
+                    <p class="instructor">👨‍🏫 Instructor: Maestro Seguridad</p>
+                    <button class="boton-curso" onclick="inscribirse('Seguridad en el Trabajo')">Inscribirse</button>
+                </div>
+
+                <div class="tarjeta-curso">
+                    <div class="estado-curso estado-en-curso">En Curso</div>
+                    <h3>Atención al Cliente Mágico</h3>
+                    <p class="duracion">⏱ 12 horas</p>
+                    <p class="descripcion">Mejora tus habilidades de servicio al cliente en un entorno mágico.</p>
+                    <p class="instructor">👨‍🏫 Instructor: Maestra Amabilidad</p>
+                    <p class="progreso">Progreso: <span class="barra-progreso"><span style="width: 60%;"></span></span> 60%</p>
+                    <button class="boton-curso boton-continuar" onclick="continuarCurso('Atención al Cliente')">Continuar</button>
+                </div>
+
+                <div class="tarjeta-curso">
+                    <div class="estado-curso estado-completado">Completado</div>
+                    <h3>Introducción a la Magia Empresarial</h3>
+                    <p class="duracion">⏱ 10 horas</p>
+                    <p class="descripcion">Fundamentos de cómo la magia se integra en procesos empresariales.</p>
+                    <p class="instructor">👨‍🏫 Instructor: Profesor Arcano</p>
+                    <p class="calificacion">⭐ Calificación: 9/10</p>
+                    <button class="boton-curso boton-certificado">Descargar Certificado</button>
+                </div>
+
+                <div class="tarjeta-curso">
+                    <div class="estado-curso estado-disponible">Disponible</div>
+                    <h3>Liderazgo en Aventuras</h3>
+                    <p class="duracion">⏱ 15 horas</p>
+                    <p class="descripcion">Desarrolla habilidades de liderazgo para dirigir equipos de aventureros.</p>
+                    <p class="instructor">👨‍🏫 Instructor: Capitán Héroe</p>
+                    <button class="boton-curso" onclick="inscribirse('Liderazgo en Aventuras')">Inscribirse</button>
+                </div>
+
+                <div class="tarjeta-curso">
+                    <div class="estado-curso estado-disponible">Disponible</div>
+                    <h3>Gestión de Recursos Mágicos</h3>
+                    <p class="duracion">⏱ 20 horas</p>
+                    <p class="descripcion">Aprende a gestionar eficientemente los recursos mágicos de la empresa.</p>
+                    <p class="instructor">👨‍🏫 Instructor: Contador Mágico</p>
+                    <button class="boton-curso" onclick="inscribirse('Gestión de Recursos Mágicos')">Inscribirse</button>
+                </div>
+
+                <div class="tarjeta-curso">
+                    <div class="estado-curso estado-completado">Completado</div>
+                    <h3>Comunicación Efectiva</h3>
+                    <p class="duracion">⏱ 6 horas</p>
+                    <p class="descripcion">Mejora tu comunicación oral y escrita en el entorno laboral.</p>
+                    <p class="instructor">👨‍🏫 Instructor: Dama Elocuencia</p>
+                    <p class="calificacion">⭐ Calificación: 8.5/10</p>
+                    <button class="boton-curso boton-certificado">Descargar Certificado</button>
+                </div>
+            </div>
+
+            <div class="tarjeta-perfil-empleado">
+                <h3>Mi Progreso en Formación</h3>
+                <p><strong>Cursos completados:</strong> 2</p>
+                <p><strong>Cursos en progreso:</strong> 1</p>
+                <p><strong>Horas de formación:</strong> 28 horas</p>
+                <p><strong>Próximo curso recomendado:</strong> Liderazgo en Aventuras</p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function verificarSesion() {
+            if (localStorage.getItem('empleado-loggedin') !== 'true') {
+                window.location.href = 'empleado-acceso.html';
+            }
+        }
+
+        function inscribirse(curso) {
+            alert(`Te has inscrito correctamente en: ${curso}`);
+        }
+
+        function continuarCurso(curso) {
+            alert(`Continuando con: ${curso}`);
+        }
+
+        function filtrarCursos(tipo) {
+            // Aquí se implementaría la lógica de filtrado
+            alert(`Mostrando: ${tipo}`);
+        }
+
+        function cerrarSesion() {
+            localStorage.removeItem('empleado-loggedin');
+            localStorage.removeItem('empleado-email');
+            window.location.href = 'pantasy.html';
+        }
+
+        verificarSesion();
+    </script>
+</body>
+</html>

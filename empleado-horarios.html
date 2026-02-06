@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Horarios - Pantasy</title>
+    <link rel="stylesheet" href="estilos/estilos.css">
+</head>
+<body class="fondo-blanco">
+    <header>
+        <h1>⚔️ Pantasy - Horarios ⚔️</h1>
+        <nav>
+            <a href="empleado-panel.html">Volver al Panel</a>
+            <a href="#" onclick="cerrarSesion()">Cerrar Sesión</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="contenido-pagina contenido-empleados">
+            <h2>⏰ Tu Horario de Trabajo</h2>
+
+            <div class="horario-semanal">
+                <h3>Horario Regular</h3>
+                <table class="tabla-horario">
+                    <thead>
+                        <tr>
+                            <th>Día</th>
+                            <th>Entrada</th>
+                            <th>Salida</th>
+                            <th>Descanso</th>
+                            <th>Total Horas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Lunes</strong></td>
+                            <td>09:00</td>
+                            <td>17:30</td>
+                            <td>1 hora</td>
+                            <td>8.5 h</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Martes</strong></td>
+                            <td>09:00</td>
+                            <td>17:30</td>
+                            <td>1 hora</td>
+                            <td>8.5 h</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Miércoles</strong></td>
+                            <td>09:00</td>
+                            <td>17:30</td>
+                            <td>1 hora</td>
+                            <td>8.5 h</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Jueves</strong></td>
+                            <td>09:00</td>
+                            <td>17:30</td>
+                            <td>1 hora</td>
+                            <td>8.5 h</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Viernes</strong></td>
+                            <td>09:00</td>
+                            <td>17:00</td>
+                            <td>1 hora</td>
+                            <td>8 h</td>
+                        </tr>
+                        <tr class="fila-fin-semana">
+                            <td><strong>Sábado</strong></td>
+                            <td colspan="4">DESCANSO</td>
+                        </tr>
+                        <tr class="fila-fin-semana">
+                            <td><strong>Domingo</strong></td>
+                            <td colspan="4">DESCANSO</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="cambios-proximos">
+                <h3>Cambios Programados</h3>
+                <div class="cambio-item">
+                    <p><strong>Semana del 10/02/2026:</strong> Horario especial por evento</p>
+                    <p>Lunes a Viernes: 08:00 - 18:00 (con pausa extendida de 2 horas)</p>
+                </div>
+                <div class="cambio-item">
+                    <p><strong>Semana del 17/02/2026:</strong> Turno rotativo</p>
+                    <p>Consulta el calendario de turnos en el panel principal</p>
+                </div>
+            </div>
+
+            <div class="vacaciones">
+                <h3>Mis Días de Vacaciones</h3>
+                <p><strong>Vacaciones disponibles este año:</strong> 22 días</p>
+                <p><strong>Vacaciones utilizadas:</strong> 5 días</p>
+                <p><strong>Vacaciones pendientes:</strong> 17 días</p>
+                <button class="boton-solicitar">Solicitar Vacaciones</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function verificarSesion() {
+            if (localStorage.getItem('empleado-loggedin') !== 'true') {
+                window.location.href = 'empleado-acceso.html';
+            }
+        }
+
+        function cerrarSesion() {
+            localStorage.removeItem('empleado-loggedin');
+            localStorage.removeItem('empleado-email');
+            window.location.href = 'pantasy.html';
+        }
+
+        verificarSesion();
+    </script>
+</body>
+</html>

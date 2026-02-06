@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Pantasy - Refugio del Aventurero</title>
+    <link rel="stylesheet" href="estilos/estilos.css">
+</head>
+<body>
+    <header>
+        <div class="header-superior">
+            <a href="perfil.html" class="boton-perfil" title="Mi Perfil">
+                <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Casco Medieval -->
+                    <g fill="none" stroke="#5a3a1a" stroke-width="2">
+                        <!-- Visera superior -->
+                        <path d="M 8 18 L 12 10 L 28 10 L 32 18" stroke="#8b5a2b" fill="#a0723d"/>
+                        <!-- Cúpula principal -->
+                        <path d="M 10 18 Q 10 15 20 12 Q 30 15 30 18" stroke="#8b5a2b" fill="#a0723d"/>
+                        <!-- Parte frontal -->
+                        <rect x="12" y="18" width="16" height="14" stroke="#8b5a2b" fill="#a0723d"/>
+                        <!-- Protección de mejillas -->
+                        <line x1="12" y1="18" x2="10" y2="28" stroke="#8b5a2b"/>
+                        <line x1="28" y1="18" x2="30" y2="28" stroke="#8b5a2b"/>
+                        <!-- Abertura para los ojos -->
+                        <rect x="15" y="22" width="10" height="4" stroke="#2d1b10" fill="#1a1410"/>
+                        <!-- Punta superior -->
+                        <line x1="20" y1="12" x2="20" y2="8" stroke="#8b5a2b"/>
+                        <!-- Detalle inferior -->
+                        <line x1="10" y1="32" x2="30" y2="32" stroke="#8b5a2b"/>
+                    </g>
+                </svg>
+            </a>
+        </div>
+        <img src="img/descarga.jpg" alt="El Señor de los Anillos - Tema Épico" style="max-width: 100%; height: auto; max-height: 300px; margin-bottom: 15px; border-radius: 8px; box-shadow: 0 0 15px rgba(139, 90, 43, 0.4);">
+        <h1>⚔️ Pantasy - Refugio del Aventurero ⚔️</h1>
+        <p style="color: var(--oro-ambar); margin: 5px 0; font-style: italic;">Un Rincón para Héroes y Soñadores</p>
+        <nav style="display: flex; justify-content: center; gap: 20px; padding: 10px 0;">
+            <a href="tienda.html" class="boton-registro">🛒 Tienda</a>
+            <a href="empleado-acceso.html" class="boton-login" style="background-color: #5a3a1a;">⚙️ Portal Empleados</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="contenedor-main">
+            <div class="botones-secciones">
+                    <a href="libreria.html" class="boton-seccion" target="_blank">📚 El Mercado de Tomos</a>
+                    <a href="forja.html" class="boton-seccion" target="_blank">🔥 La Forja del Sabor</a>
+                    <a href="blog.html" class="boton-seccion" target="_blank">📖 Crónicas del Bosque</a>
+                </div>
+
+                <section id="forja" class="forja-monitor">
+                    <h2>Conócenos</h2>
+                    <div id="status-robot">Pantasy nace de la ilusión y el deseo de materializar el amor por las aventuras épicas en el mundo real. No somos simplemente una panadería o una cafetería; somos una empresa experiencial encargada de transportar a nuestros clientes a un mundo de fantasía literaria. Nuestra propuesta fusiona tres pilares fundamentales: el placer de la repostería casera y el café de especialidad, la inmersión en la literatura fantástica y el uso de la tecnología para mejorar la experiencia.
+La esencia de Pantasy es ofrecer un "tercer lugar" (ajeno al hogar y al trabajo) donde el cliente puede desconectar de la realidad. Ya sea asistiendo a nuestras charlas de presentación de libros, participando en lecturas en voz alta o simplemente disfrutando de un rincón en un cómodo sillón de lectura acompañado de un chocolate caliente, el objetivo es la inmersión total.</div>
+                    <p class="sello-mary">La Compañía de Aventureros" Nuestra filosofía transforma a los empleados en un equipo unido, priorizando el capital humano tanto como el producto.  
+
+Los 5 Valores Innegociables (La Brújula Moral): Artesanía Mágica: Excelencia y detalle. Todo producto debe parecer "hecho con magia". 
+
+Hermandad y Respeto:  Trato justo, dignidad y apoyo mutuo. 
+
+Inmersión y Cuento:  No vendemos café, vendemos una historia. Todo refuerza la narrativa. 
+
+Cultivo de Talentos: Formación continua, promoción interna y creatividad. 
+
+Calor de Hoguera: Ser un refugio seguro y acogedor para empleados y clientes. </p>
+                </section>
+
+                <section id="blog">
+                    <h2>Tablón de Anuncios: Salamanca</h2>
+                    <article>
+                        <div class="contenedor-calendario">
+        <h2>📅 Eventos de la Semana</h2>
+        <table class="tabla-eventos">
+            <thead>
+                <tr>
+                    <th>Día</th>
+                    <th>Evento</th>
+                    <th>Categoría</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="cat-dnd">
+                    <td><strong>Lunes</strong></td>
+                    <td>Iniciación al Dungeon</td>
+                    <td><span class="etiqueta">D&D 5e</span></td>
+                </tr>
+                <tr class="cat-mtg">
+                    <td><strong>Martes</strong></td>
+                    <td>Torneo Commander</td>
+                    <td><span class="etiqueta">Magic</span></td>
+                </tr>
+                <tr class="cat-dnd">
+                    <td><strong>Miércoles</strong></td>
+                    <td>One-Shot: "El Robo del Siglo"</td>
+                    <td><span class="etiqueta">D&D 5e</span></td>
+                </tr>
+                <tr class="cat-mesa">
+                    <td><strong>Jueves</strong></td>
+                    <td>Eurogames & Chill</td>
+                    <td><span class="etiqueta">Juegos de Mesa</span></td>
+                </tr>
+                <tr class="cat-mtg">
+                    <td><strong>Viernes</strong></td>
+                    <td>Friday Night Draft</td>
+                    <td><span class="etiqueta">Magic</span></td>
+                </tr>
+                <tr class="cat-especial">
+                    <td><strong>Sábado</strong></td>
+                    <td>Campaña Épica (Nivel 12+)</td>
+                    <td><span class="etiqueta">D&D Pro</span></td>
+                </tr>
+                <tr class="cat-hobby">
+                    <td><strong>Domingo</strong></td>
+                    <td>Taller de Pintura</td>
+                    <td><span class="etiqueta">Hobby</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+                    </article>
+                </section>
+            </div>
+        </div>
+
+    <script>
+        // Lógica de Resiliencia: Si cae la red global, usar datos de caché local (Edge Computing)
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw-resiliencia.js');
+            });
+        }
+    </script>
+</body>
+</html>

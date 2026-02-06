@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Fichaje - Pantasy</title>
+    <link rel="stylesheet" href="estilos/estilos.css">
+</head>
+<body class="fondo-blanco">
+    <header>
+        <h1>⚔️ Pantasy - Sistema de Fichaje ⚔️</h1>
+        <nav>
+            <a href="empleado-panel.html">Volver al Panel</a>
+            <a href="#" onclick="cerrarSesion()">Cerrar Sesión</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="contenido-pagina contenido-empleados">
+            <h2>👤 Sistema de Fichaje</h2>
+
+            <div class="tarjeta-fichaje">
+                <h3>Fichaje del Día</h3>
+                <div class="reloj-digital">
+                    <span id="hora-actual">--:--:--</span>
+                </div>
+                <div class="botones-fichaje">
+                    <button class="boton-entrada" onclick="registrarEntrada()">🔓 Entrada</button>
+                    <button class="boton-salida" onclick="registrarSalida()">🔒 Salida</button>
+                </div>
+            </div>
+
+            <div class="tarjeta-fichaje">
+                <h3>Historial de Fichajes - Última Semana</h3>
+                <table class="tabla-historial">
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Entrada</th>
+                            <th>Salida</th>
+                            <th>Horas Trabajadas</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>03/02/2026</td>
+                            <td>09:15</td>
+                            <td>17:45</td>
+                            <td>8h 30min</td>
+                            <td><span class="estado-completo">✓ Completo</span></td>
+                        </tr>
+                        <tr>
+                            <td>02/02/2026</td>
+                            <td>09:00</td>
+                            <td>17:30</td>
+                            <td>8h 30min</td>
+                            <td><span class="estado-completo">✓ Completo</span></td>
+                        </tr>
+                        <tr>
+                            <td>01/02/2026</td>
+                            <td>09:30</td>
+                            <td>18:00</td>
+                            <td>8h 30min</td>
+                            <td><span class="estado-completo">✓ Completo</span></td>
+                        </tr>
+                        <tr>
+                            <td>31/01/2026</td>
+                            <td>09:00</td>
+                            <td>13:00</td>
+                            <td>4h</td>
+                            <td><span class="estado-incompleto">⚠ Media jornada</span></td>
+                        </tr>
+                        <tr>
+                            <td>30/01/2026</td>
+                            <td>---</td>
+                            <td>---</td>
+                            <td>---</td>
+                            <td><span class="estado-ausente">✕ Ausente</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="tarjeta-fichaje">
+                <h3>Resumen del Mes</h3>
+                <div class="resumen-mes">
+                    <p><strong>Días trabajados:</strong> 18 de 21</p>
+                    <p><strong>Horas totales:</strong> 144 horas</p>
+                    <p><strong>Promedio diario:</strong> 8h</p>
+                    <p><strong>Faltas:</strong> 1 día</p>
+                    <p><strong>Retrasos:</strong> 2 ocasiones</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function verificarSesion() {
+            if (localStorage.getItem('empleado-loggedin') !== 'true') {
+                window.location.href = 'empleado-acceso.html';
+            }
+        }
+
+        function actualizarReloj() {
+            const ahora = new Date();
+            const horas = String(ahora.getHours()).padStart(2, '0');
+            const minutos = String(ahora.getMinutes()).padStart(2, '0');
+            const segundos = String(ahora.getSeconds()).padStart(2, '0');
+            document.getElementById('hora-actual').textContent = `${horas}:${minutos}:${segundos}`;
+        }
+
+        function registrarEntrada() {
+            alert('Entrada registrada correctamente a las ' + new Date().toLocaleTimeString());
+        }
+
+        function registrarSalida() {
+            alert('Salida registrada correctamente a las ' + new Date().toLocaleTimeString());
+        }
+
+        function cerrarSesion() {
+            localStorage.removeItem('empleado-loggedin');
+            localStorage.removeItem('empleado-email');
+            window.location.href = 'pantasy.html';
+        }
+
+        verificarSesion();
+        setInterval(actualizarReloj, 1000);
+        actualizarReloj();
+    </script>
+</body>
+</html>

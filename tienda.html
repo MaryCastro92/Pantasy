@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tienda - Pantasy</title>
+    <link rel="stylesheet" href="estilos/estilos.css">
+</head>
+<body>
+    <header>
+        <div class="header-superior">
+            <a href="perfil.html" class="boton-perfil" title="Mi Perfil">
+                <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Casco Medieval -->
+                    <g fill="none" stroke="#5a3a1a" stroke-width="2">
+                        <path d="M 8 18 L 12 10 L 28 10 L 32 18" stroke="#8b5a2b" fill="#a0723d"/>
+                        <path d="M 10 18 Q 10 15 20 12 Q 30 15 30 18" stroke="#8b5a2b" fill="#a0723d"/>
+                        <rect x="12" y="18" width="16" height="14" stroke="#8b5a2b" fill="#a0723d"/>
+                        <line x1="12" y1="18" x2="10" y2="28" stroke="#8b5a2b"/>
+                        <line x1="28" y1="18" x2="30" y2="28" stroke="#8b5a2b"/>
+                        <rect x="15" y="22" width="10" height="4" stroke="#2d1b10" fill="#1a1410"/>
+                        <line x1="20" y1="12" x2="20" y2="8" stroke="#8b5a2b"/>
+                        <line x1="10" y1="32" x2="30" y2="32" stroke="#8b5a2b"/>
+                    </g>
+                </svg>
+            </a>
+            <a href="carrito.html" class="boton-carrito" title="Mi Carrito">
+                <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Carrito de compras -->
+                    <g fill="#8b5a2b">
+                        <path d="M 8 8 L 10 28 Q 10 30 12 30 L 28 30 Q 30 30 30 28 L 32 8 Z" fill="none" stroke="#8b5a2b" stroke-width="2"/>
+                        <line x1="10" y1="15" x2="30" y2="15" stroke="#8b5a2b" stroke-width="2"/>
+                        <circle cx="14" cy="30" r="2" fill="#8b5a2b"/>
+                        <circle cx="26" cy="30" r="2" fill="#8b5a2b"/>
+                        <text x="35" y="10" font-size="12" fill="#d4af37" font-weight="bold">0</text>
+                    </g>
+                </svg>
+            </a>
+        </div>
+        <h1>⚔️ Pantasy - Tienda ⚔️</h1>
+        <p style="color: var(--oro-ambar); margin: 5px 0; font-style: italic;">Compra, alquila y reserva tus tesoros</p>
+        <nav>
+            <a href="pantasy.html">Inicio</a>
+            <a href="libreria.html">El Mercado de Tomos</a>
+            <a href="forja.html">La Forja del Sabor</a>
+            <a href="blog.html">Crónicas del Bosque</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="contenido-pagina">
+            <a href="pantasy.html" class="volver">← Volver al inicio</a>
+            
+            <div class="tienda-container">
+                <!-- Sección de Libros para Reservar -->
+                <section class="seccion-tienda">
+                    <h2>📚 Reserva Libros</h2>
+                    <div class="grid-productos">
+                        <div class="producto-card">
+                            <h3>La Odisea del Dragón Dorado</h3>
+                            <p class="autor">Aldrin el Bardo</p>
+                            <p class="descripcion">Una épica aventura de búsqueda y heroísmo.</p>
+                            <p class="precio">Alquiler: 5.00 € / mes</p>
+                            <div class="disponibilidad">✓ Disponible</div>
+                            <button class="boton-accion" onclick="reservarLibro('La Odisea del Dragón Dorado')">Reservar</button>
+                        </div>
+                        
+                        <div class="producto-card">
+                            <h3>Tratado de Magia Elemental</h3>
+                            <p class="autor">Merlín Arcano</p>
+                            <p class="descripcion">Guía completa de dominio elemental.</p>
+                            <p class="precio">Alquiler: 6.50 € / mes</p>
+                            <div class="disponibilidad">✓ Disponible</div>
+                            <button class="boton-accion" onclick="reservarLibro('Tratado de Magia Elemental')">Reservar</button>
+                        </div>
+                        
+                        <div class="producto-card">
+                            <h3>Mapas de Tierras Olvidadas</h3>
+                            <p class="autor">Explorador Anónimo</p>
+                            <p class="descripcion">Cartas de reinos desaparecidos y tesoros.</p>
+                            <p class="precio">Alquiler: 7.50 € / mes</p>
+                            <div class="no-disponible">⚠ No disponible</div>
+                            <button class="boton-accion" disabled>Agotado</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sección de Productos para Comprar -->
+                <section class="seccion-tienda">
+                    <h2>🔥 Compra Productos de La Forja del Sabor</h2>
+                    <div class="grid-productos">
+                        <div class="producto-card">
+                            <h3>Caldo de Dragón</h3>
+                            <p class="descripcion">Bebida mágica que otorga vitalidad.</p>
+                            <p class="precio">45.00 €</p>
+                            <p class="cantidad-disponible">Stock: 12 unidades</p>
+                            <div class="selector-cantidad">
+                                <button onclick="decrementarCantidad(this)">-</button>
+                                <input type="number" value="1" min="1" max="12" class="cantidad-input">
+                                <button onclick="incrementarCantidad(this)">+</button>
+                            </div>
+                            <button class="boton-carrito-agregar" onclick="agregarAlCarrito('Caldo de Dragón', 45.00)">Añadir al carrito</button>
+                        </div>
+                        
+                        <div class="producto-card">
+                            <h3>Pan de los Antiguos</h3>
+                            <p class="descripcion">Receta mágica ancestral (500g).</p>
+                            <p class="precio">12.50 €</p>
+                            <p class="cantidad-disponible">Stock: 25 unidades</p>
+                            <div class="selector-cantidad">
+                                <button onclick="decrementarCantidad(this)">-</button>
+                                <input type="number" value="1" min="1" max="25" class="cantidad-input">
+                                <button onclick="incrementarCantidad(this)">+</button>
+                            </div>
+                            <button class="boton-carrito-agregar" onclick="agregarAlCarrito('Pan de los Antiguos', 12.50)">Añadir al carrito</button>
+                        </div>
+                        
+                        <div class="producto-card">
+                            <h3>Miel de las Hadas</h3>
+                            <p class="descripcion">Néctar dulce y mágico (250ml).</p>
+                            <p class="precio">35.00 €</p>
+                            <p class="cantidad-disponible">Stock: 8 unidades</p>
+                            <div class="selector-cantidad">
+                                <button onclick="decrementarCantidad(this)">-</button>
+                                <input type="number" value="1" min="1" max="8" class="cantidad-input">
+                                <button onclick="incrementarCantidad(this)">+</button>
+                            </div>
+                            <button class="boton-carrito-agregar" onclick="agregarAlCarrito('Miel de las Hadas', 35.00)">Añadir al carrito</button>
+                        </div>
+                        
+                        <div class="producto-card">
+                            <h3>Queso de las Montañas Altas</h3>
+                            <p class="descripcion">Envejecido en cuevas mágicas (300g).</p>
+                            <p class="precio">28.75 €</p>
+                            <p class="cantidad-disponible">Stock: 15 unidades</p>
+                            <div class="selector-cantidad">
+                                <button onclick="decrementarCantidad(this)">-</button>
+                                <input type="number" value="1" min="1" max="15" class="cantidad-input">
+                                <button onclick="incrementarCantidad(this)">+</button>
+                            </div>
+                            <button class="boton-carrito-agregar" onclick="agregarAlCarrito('Queso de las Montañas Altas', 28.75)">Añadir al carrito</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw-resiliencia.js');
+            });
+        }
+
+        function incrementarCantidad(button) {
+            const input = button.parentNode.querySelector('.cantidad-input');
+            const max = parseInt(input.max);
+            if (parseInt(input.value) < max) {
+                input.value = parseInt(input.value) + 1;
+            }
+        }
+
+        function decrementarCantidad(button) {
+            const input = button.parentNode.querySelector('.cantidad-input');
+            if (parseInt(input.value) > 1) {
+                input.value = parseInt(input.value) - 1;
+            }
+        }
+
+        function agregarAlCarrito(nombre, precio) {
+            const cantidad = 1; // Por ahora añade 1 unidad
+            alert(`${cantidad}x ${nombre} (${precio}€) añadido al carrito`);
+            // Aquí se podría guardar en localStorage o enviar a carrito.html
+        }
+
+        function reservarLibro(titulo) {
+            alert(`Libro "${titulo}" reservado correctamente. Se te notificará cuando esté disponible.`);
+        }
+    </script>
+</body>
+</html>

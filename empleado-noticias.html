@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Noticias de la Empresa - Pantasy</title>
+    <link rel="stylesheet" href="estilos/estilos.css">
+</head>
+<body class="fondo-blanco">
+    <header>
+        <h1>⚔️ Pantasy - Noticias de la Empresa ⚔️</h1>
+        <nav>
+            <a href="empleado-panel.html">Volver al Panel</a>
+            <a href="#" onclick="cerrarSesion()">Cerrar Sesión</a>
+        </nav>
+    </header>
+
+   <main>
+    <div class="contenido-pagina contenido-empleados">
+        <h2>📜 Crónicas del Gremio y Edictos Reales</h2>
+
+        <article class="noticia-empresa">
+            <h3>🎉 ¡Una Década de Magia: 10 Ciclos de Pantasy!</h3>
+            <p class="fecha-noticia">Sol de Invierno, 01/02/2026</p>
+            <p>Este mes, los astros se alinean para celebrar que nuestro refugio cumple 10 años. Desde la primera hogaza horneada hasta el último hechizo digital, cada aventurero ha sido vital en este viaje. Mary y Anji están preparando festines y eventos legendarios en la taberna que durarán toda la luna.</p>
+        </article>
+
+        <article class="noticia-empresa">
+            <h3>📈 El Tesoro Crece: ¡Botín aumentado en un 25%!</h3>
+            <p class="fecha-noticia">Ocaso del Guerrero, 28/01/2026</p>
+            <p>Nuestras arcas rebosan gracias a vuestras hazañas en el último trimestre. El crecimiento del 25% se traducirá en sacos de oro adicionales (bonificaciones) para todos los miembros del gremio. ¡Vuestro valor en el campo de batalla comercial merece esta recompensa!</p>
+        </article>
+
+        <article class="noticia-empresa">
+            <h3>🏢 Nueva Frontera: Se alza el Bastión de Aramis</h3>
+            <p class="fecha-noticia">Día del Heraldo, 25/01/2026</p>
+            <p>¡Expandimos nuestros dominios! Una nueva sucursal de Pantasy abre sus puertas en las tierras de Aramis. Buscamos valientes voluntarios dispuestos a colonizar este nuevo territorio. Si deseas trasladar tu puesto de guardia, contacta con los Maestros de Escribas (RRHH).</p>
+        </article>
+
+        <article class="noticia-empresa">
+            <h3>🎓 Peregrinación de Aprendizaje: Becas de Ultramar</h3>
+            <p class="fecha-noticia">Luna Creciente, 20/01/2026</p>
+            <p>El Gremio financia tu viaje para aprender nuevas artes en reinos lejanos. Ofrecemos becas de desarrollo profesional en el extranjero para aquellos que quieran subir de nivel sus habilidades. Solicita tu salvoconducto informativo antes de que acabe la quincena de febrero.</p>
+        </article>
+
+        <article class="noticia-empresa">
+            <h3>⚠️ Nueva Runa de Acceso: Fichaje 4.0</h3>
+            <p class="fecha-noticia">Día de la Forja, 15/01/2026</p>
+            <p>A partir del 10 de febrero, el antiguo ritual de fichaje será reemplazado por un nuevo artefacto digital. Los Druidas de IT realizarán una sesión de entrenamiento obligatoria el 8 de febrero para que aprendas a dominar esta nueva magia. ¡No faltes a tu cita departamental!</p>
+        </article>
+
+        <article class="noticia-empresa">
+            <h3>🏆 Héroe de la Taberna: Honor de Enero</h3>
+            <p class="fecha-noticia">Cenit del Mes, 10/01/2026</p>
+            <p>Alzad vuestras jarras por nuestro <strong>Aventurero Heroico</strong> de enero. Su destreza con la espada (y la espátula) y su espíritu de hermandad han dejado huella en el reino este mes. Su retrato colgará en el Salón de la Fama hasta la próxima luna. ¡Gloria y honor!</p>
+        </article>
+    </div>
+</main>
+
+    <script>
+        function verificarSesion() {
+            if (localStorage.getItem('empleado-loggedin') !== 'true') {
+                window.location.href = 'empleado-acceso.html';
+            }
+        }
+
+        function cerrarSesion() {
+            localStorage.removeItem('empleado-loggedin');
+            localStorage.removeItem('empleado-email');
+            window.location.href = 'pantasy.html';
+        }
+
+        verificarSesion();
+    </script>
+</body>
+</html>

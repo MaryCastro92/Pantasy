@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Crónicas del Bosque - Pantasy</title>
+    <link rel="stylesheet" href="estilos/estilos.css">
+</head>
+<body>
+    <header>
+        <h1>⚔️ Pantasy - Refugio del Aventurero ⚔️</h1>
+        <p style="color: var(--oro-ambar); margin: 5px 0; font-style: italic;">Un Rincón para Héroes y Soñadores</p>
+        <nav>
+            <a href="pantasy.html">Inicio</a>
+            <a href="libreria.html">El Mercado de Tomos</a>
+            <a href="forja.html">La Forja del Sabor</a>
+            <a href="blog.html">Crónicas del Bosque</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="contenido-pagina">
+            <a href="pantasy.html" class="volver">← Volver al inicio</a>
+            
+            <h2>📖 Crónicas del Bosque</h2>
+            <p>Bienvenido a las Crónicas del Bosque, donde se recopilan los eventos, noticias y aventuras más importantes del reino. Un registro vivo de la historia en construcción.</p>
+            
+            <h3>Tablón de Anuncios: Salamanca</h3>
+            <h4>📅 Eventos de la Semana</h4>
+                <table class="tabla-eventos">
+                    <thead>
+                        <tr>
+                            <th>Día</th>
+                            <th>Evento</th>
+                            <th>Categoría</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="cat-dnd">
+                            <td><strong>Lunes</strong></td>
+                            <td>Iniciación al Dungeon</td>
+                            <td><span class="etiqueta">D&D 5e</span></td>
+                        </tr>
+                        <tr class="cat-mtg">
+                            <td><strong>Martes</strong></td>
+                            <td>Torneo Commander</td>
+                            <td><span class="etiqueta">Magic</span></td>
+                        </tr>
+                        <tr class="cat-dnd">
+                            <td><strong>Miércoles</strong></td>
+                            <td>One-Shot: "El Robo del Siglo"</td>
+                            <td><span class="etiqueta">D&D 5e</span></td>
+                        </tr>
+                        <tr class="cat-mesa">
+                            <td><strong>Jueves</strong></td>
+                            <td>Eurogames & Chill</td>
+                            <td><span class="etiqueta">Juegos de Mesa</span></td>
+                        </tr>
+                        <tr class="cat-mtg">
+                            <td><strong>Viernes</strong></td>
+                            <td>Friday Night Draft</td>
+                            <td><span class="etiqueta">Magic</span></td>
+                        </tr>
+                        <tr class="cat-especial">
+                            <td><strong>Sábado</strong></td>
+                            <td>Campaña Épica (Nivel 12+)</td>
+                            <td><span class="etiqueta">D&D Pro</span></td>
+                        </tr>
+                        <tr class="cat-hobby">
+                            <td><strong>Domingo</strong></td>
+                            <td>Taller de Pintura</td>
+                            <td><span class="etiqueta">Hobby</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+                        
+            <h3>Últimas noticias del reino:</h3>
+            <article>
+                <h4 class="texto-informativo">Avistamiento de dragón en las montañas del norte</h4>
+                <p>Aldeanos reportan haber visto una criatura alada sobrevolando los picos nevados. 
+                    Se rumorea que busca un objeto de gran valor. Los aventureros que lo avisten en el próximo torneo de Magic The Gathering. 
+                    Recibirán sobres exclusivos con su combo de café o té más croissant.</p>
+                    <div class="recuadro-imagen">
+                    <img src="img/magic.jpg" alt="Imagen Magic">
+                    </div>
+                <p><em>Publicado hace 3 días</em></p>
+            </article>
+            <article>
+                <h4 class="texto-informativo">El Mercado de Tomos inaugura nueva sección</h4>
+                <p>Se ha abierto al público la famosa Bóveda de los Secretos, donde se guardan los textos más antiguos del reino. Ya podéis visitar nuestro nuevo rincón dedicado a los grandes clásicos de la fantasía: "El Silmarilion", "El Hobbit" y toda la trilogía del Señor de los Anillos disponible en ediciones especiales ¡¡con mapas!!</p>
+                <p><b>¡CORRED INSENSATOS!</b></p>
+                    <div class="recuadro-imagen">
+                    <img src="img/gandalf.htm" alt="Imagen gandalf">
+                    </div>
+                <p><em>Publicado hace 5 días</em></p>
+            </article>
+            <article>
+                <h4 class="texto-informativo">Torneo de habilidades de los Aventureros</h4>
+                <p>Cada mes se celebra un torneo donde los guerreros, magos y pícaros más hábiles del reino compiten por gloria y recompensas.
+                     Las partidas de One-Shot más épicas jamás conocidas, 
+                     ¡Retos únicos para aventureros veteranos y novatos!</p>
+                    <div class="recuadro-imagen">
+                    <img src="img/DnD.jpg" alt="Imagen DnD">
+                    </div>
+                <p><em>Próximo torneo: 15 de febrero</em></p>
+            </article>
+        </div>
+    </main>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw-resiliencia.js');
+            });
+        }
+    </script>
+</body>
+</html>

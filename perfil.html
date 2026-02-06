@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Perfil - Pantasy</title>
+    <link rel="stylesheet" href="estilos/estilos.css">
+</head>
+<body>
+    <header>
+        <h1>⚔️ Pantasy - Refugio del Aventurero ⚔️</h1>
+        <p style="color: var(--oro-ambar); margin: 5px 0; font-style: italic;">Un Rincón para Héroes y Soñadores</p>
+        <nav>
+            <a href="pantasy.html">Inicio</a>
+            <a href="libreria.html">El Mercado de Tomos</a>
+            <a href="forja.html">La Forja del Sabor</a>
+            <a href="blog.html">Crónicas del Bosque</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="contenido-pagina" id="contenido-perfil">
+            <a href="pantasy.html" class="volver">← Volver al inicio</a>
+            
+            <div id="sesion-no-iniciada" style="display: none; text-align: center; padding: 40px;">
+                <div class="tarjeta-perfil" style="background: rgba(255, 255, 255, 0.95); border: 2px solid #8b5a2b; border-radius: 8px; padding: 40px; margin: 20px auto; max-width: 500px;">
+                    <h2>No hay sesión iniciada</h2>
+                    <p>Para acceder a tu perfil, debes iniciar sesión o crear una nueva cuenta.</p>
+                    <button onclick="window.location.href='registro.html'" class="boton-enviar" style="margin: 20px 10px; cursor: pointer; padding: 12px 30px;">Crear Cuenta de Aventurero</button>
+                    <button onclick="mostrarLoginModal()" class="boton-enviar" style="margin: 20px 10px; background-color: #4169e1; cursor: pointer; padding: 12px 30px;">Iniciar Sesión de Aventurero</button>
+                    <hr style="margin: 30px 0; border: 1px solid #d9c5ae;">
+                    <p style="margin: 20px 0; color: #5a3a1a; font-weight: bold;">¿Eres un empleado?</p>
+                    <button onclick="window.location.href='empleado-acceso.html'" class="boton-enviar" style="margin: 10px 10px; background-color: #5a3a1a; cursor: pointer; padding: 12px 30px;">Acceso Portal de Empleados</button>
+                </div>
+            </div>
+            
+            <div id="modal-login" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 1000; align-items: center; justify-content: center;">
+                <div class="formulario-acceso-empleado" style="background: white; max-width: 400px;">
+                    <h2>Iniciar Sesión</h2>
+                    <form onsubmit="iniciarSesion(event)">
+                        <div class="grupo-formulario">
+                            <label for="login-email">Correo Electrónico:</label>
+                            <input type="email" id="login-email" required>
+                        </div>
+                        <div class="grupo-formulario">
+                            <label for="login-password">Contraseña:</label>
+                            <input type="password" id="login-password" required>
+                        </div>
+                        <button type="submit" class="boton-enviar" style="width: 100%;">Iniciar Sesión</button>
+                        <button type="button" onclick="cerrarLoginModal()" class="boton-enviar" style="width: 100%; background-color: #999; margin-top: 10px;">Cancelar</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div id="contenido-autenticado" style="display: none;">
+            
+            <h2>👤 Mi Perfil</h2>
+            
+            <div class="tarjeta-perfil">
+                <h3>Información Personal</h3>
+                <div class="info-usuario">
+                    <p><strong>Nombre:</strong> <span id="usuario-nombre">Juan García López</span></p>
+                    <p><strong>DNI:</strong> <span id="usuario-dni">12345678A</span></p>
+                    <p><strong>Correo:</strong> <span id="usuario-email">juan@example.com</span></p>
+                    <p><strong>Clase de Personaje:</strong> <span id="usuario-clase">Guerrero</span></p>
+                    <p><strong>Reino de Origen:</strong> <span id="usuario-reino">Castilla</span></p>
+                </div>
+                <button class="boton-editar" onclick="editarPerfil()">Editar Perfil</button>
+            </div>
+
+            <div class="tarjeta-perfil">
+                <h3>📚 Libros Alquilados</h3>
+                <table class="tabla-historial">
+                    <thead>
+                        <tr>
+                            <th>Título del Libro</th>
+                            <th>Autor</th>
+                            <th>Fecha de Alquiler</th>
+                            <th>Fecha de Devolución</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>La Odisea del Dragón Dorado</td>
+                            <td>Aldrin el Bardo</td>
+                            <td>15/01/2026</td>
+                            <td>05/02/2026</td>
+                            <td><span class="estado-activo">Activo</span></td>
+                        </tr>
+                        <tr>
+                            <td>Tratado de Magia Elemental</td>
+                            <td>Merlín Arcano</td>
+                            <td>01/01/2026</td>
+                            <td>31/01/2026</td>
+                            <td><span class="estado-devuelto">Devuelto</span></td>
+                        </tr>
+                        <tr>
+                            <td>Mapas de Tierras Olvidadas</td>
+                            <td>Explorador Anónimo</td>
+                            <td>10/01/2026</td>
+                            <td>02/02/2026</td>
+                            <td><span class="estado-devuelto">Devuelto</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="nota-alquiler">Total de libros alquilados: 3</p>
+            </div>
+
+            <div class="tarjeta-perfil">
+                <h3>🛒 Historial de Compras</h3>
+                <table class="tabla-historial">
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Tipo</th>
+                            <th>Precio</th>
+                            <th>Fecha de Compra</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Caldo de Dragón (1L)</td>
+                            <td>Bebida Mágica</td>
+                            <td>45.00 €</td>
+                            <td>28/01/2026</td>
+                            <td><span class="estado-entregado">Entregado</span></td>
+                        </tr>
+                        <tr>
+                            <td>Pan de los Antiguos (500g)</td>
+                            <td>Alimento</td>
+                            <td>12.50 €</td>
+                            <td>25/01/2026</td>
+                            <td><span class="estado-entregado">Entregado</span></td>
+                        </tr>
+                        <tr>
+                            <td>Miel de las Hadas (250ml)</td>
+                            <td>Bebida Mágica</td>
+                            <td>35.00 €</td>
+                            <td>20/01/2026</td>
+                            <td><span class="estado-entregado">Entregado</span></td>
+                        </tr>
+                        <tr>
+                            <td>Queso de las Montañas Altas (300g)</td>
+                            <td>Alimento</td>
+                            <td>28.75 €</td>
+                            <td>15/01/2026</td>
+                            <td><span class="estado-entregado">Entregado</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="resumen-compras">
+                    <p><strong>Total de compras:</strong> 121.25 €</p>
+                    <p><strong>Número de compras:</strong> 4</p>
+                </div>
+            </div>
+
+            <div class="tarjeta-perfil">
+                <h3>⚙️ Configuración de Cuenta</h3>
+                <button class="boton-accion">Cambiar Contraseña</button>
+                <button class="boton-accion">Gestionar Suscripciones</button>
+                <button class="boton-accion boton-peligro" onclick="cerrarSesion()">Cerrar Sesión</button>
+            </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw-resiliencia.js');
+            });
+        }
+
+        // Verificar si hay sesión iniciada
+        function verificarSesion() {
+            const usuarioData = localStorage.getItem('usuario-actual');
+            if (!usuarioData) {
+                document.getElementById('sesion-no-iniciada').style.display = 'block';
+                document.getElementById('contenido-autenticado').style.display = 'none';
+                return false;
+            } else {
+                document.getElementById('sesion-no-iniciada').style.display = 'none';
+                document.getElementById('contenido-autenticado').style.display = 'block';
+                return true;
+            }
+        }
+
+        function mostrarLoginModal() {
+            document.getElementById('modal-login').style.display = 'flex';
+        }
+
+        function cerrarLoginModal() {
+            document.getElementById('modal-login').style.display = 'none';
+        }
+
+        function iniciarSesion(event) {
+            event.preventDefault();
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+            
+            // Simulación: buscar usuario con estos datos
+            localStorage.setItem('usuario-actual', JSON.stringify({
+                email: email,
+                nombre: 'Usuario',
+                apellidos: 'Aventurero'
+            }));
+            
+            alert('Sesión iniciada correctamente');
+            cerrarLoginModal();
+            verificarSesion();
+        }
+
+        function cerrarSesion() {
+            localStorage.removeItem('usuario-actual');
+            verificarSesion();
+            alert('Sesión cerrada');
+        }
+
+        function editarPerfil() {
+            alert('Función de edición de perfil disponible pronto');
+        }
+
+        // Verificar sesión al cargar la página
+        window.addEventListener('load', verificarSesion);
+    </script>
+</body>
+</html>

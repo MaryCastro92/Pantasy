@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>El Mercado de Tomos - Pantasy</title>
+    <link rel="stylesheet" href="estilos/estilos.css">
+</head>
+<body>
+    <header>
+        <h1>⚔️ Pantasy - Refugio del Aventurero ⚔️</h1>
+        <p style="color: var(--oro-ambar); margin: 5px 0; font-style: italic;">Un Rincón para Héroes y Soñadores</p>
+        <nav>
+            <a href="pantasy.html">Inicio</a>
+            <a href="libreria.html">El Mercado de Tomos</a>
+            <a href="forja.html">La Forja del Sabor</a>
+            <a href="blog.html">Crónicas del Bosque</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="contenido-pagina">
+            <a href="pantasy.html" class="volver">← Volver al inicio</a>
+            
+            <h2>📚 El Mercado de Tomos</h2>
+            <p>Bienvenido al Mercado de Tomos, donde se reúnen los textos más antiguos y valiosos del reino. Aquí encontrarás libros de aventuras, hechicería, y sabiduría ancestral.</p>
+            
+            <h3>Secciones disponibles:</h3>
+            <ul>
+                <li><strong>Libros de Aventuras:</strong> Crónicas de héroes legendarios y sus hazañas épicas.</li>
+                <li><strong>Textos Mágicos:</strong> Compendios de hechizos y rituales antiguos.</li>
+                <li><strong>Sabiduría Ancestral:</strong> Tratados sobre el conocimiento de los antiguos.</li>
+                <li><strong>Leyendas Perdidas:</strong> Historias olvidadas que resurgen del polvo de los siglos.</li>
+            </ul>
+            
+            <h3>Libros destacados:</h3>
+            <article>
+                <h4>La Odisea del Dragón Dorado</h4>
+                <p>Un épico relato sobre la búsqueda de la criatura más legendaria del reino. Escrito por el bardo Aldrin hace tres siglos.</p>
+            </article>
+            <article>
+                <h4>Tratado de Magia Elemental</h4>
+                <p>La guía completa para dominar los cuatro elementos. Indispensable para cualquier aprendiz de mago.</p>
+            </article>
+            <article>
+                <h4>Mapas de Tierras Olvidadas</h4>
+                <p>Cartas antiguas que revelan la ubicación de reinos desaparecidos y tesoros ocultos.</p>
+            </article>
+        </div>
+    </main>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw-resiliencia.js');
+            });
+        }
+    </script>
+</body>
+</html>
