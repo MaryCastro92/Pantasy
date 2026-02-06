@@ -66,7 +66,7 @@ header {
     border: 1px solid rgba(45, 90, 39, 0.2);
 }
 
-/* Efecto Hover para interactividad */
+/* Efecto Hover para interactividad, vamos que brilla conel cursor encima*/
 tr:hover {
     filter: brightness(0.95);
     transition: 0.3s;
@@ -81,7 +81,7 @@ tr:hover {
        
 
         .texto-informativo {
-            margin-bottom: 20px;
+            margin-bottom: 20px auto;
             font-size: 1.2rem;
             color: #333;
             text-align: center;
@@ -89,7 +89,7 @@ tr:hover {
 
         .recuadro-imagen {
             border: 5px solid #2d6a4f; /* Color verde para ir a juego con tu tablón */
-            padding: 10px;
+            padding: 20px;
             background-color: white;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
             border-radius: 8px;
@@ -182,6 +182,15 @@ header h1 {
     color: #5a3a1a;
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
 }
+a {
+    text-decoration: none; /* Quita el subrayado */
+    color: inherit;       /* Hereda el color del texto circundante o define uno: color: #333; */
+}
+
+a:hover { /*hover me cae bien para dar un toque de interactividad, aunque no es necesario en todos los enlaces, así que lo dejo aquí por si acaso*/
+    text-decoration: none; /* Mantiene sin subrayado al pasar el ratón */
+    color: rgb(220, 158, 13);          /* Opcional: cambia de color al pasar el ratón */
+}
 
 nav {
     padding: 10px 0;
@@ -197,7 +206,58 @@ nav a {
 nav a:hover {
     text-shadow: 0 0 10px rgba(139, 90, 43, 0.6);
 }
+.footer {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 40px 20px 20px;
+    font-family: sans-serif;
+  }
 
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+  }
+
+  .footer-column h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #f4f4f4;
+  }
+
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-column ul li {
+    margin-bottom: 10px;
+  }
+
+  .footer-column a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .footer-column a:hover {
+    color: #fff;
+  }
+
+  .footer-bottom {
+    margin-top: 40px;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #888;
+  }
+
+  .payment-methods {
+    margin-top: 10px;
+  }
 .contenedor-main {
     max-width: 1200px;
     margin: 0 auto;
@@ -211,8 +271,8 @@ nav a:hover {
     background: rgba(255, 255, 255, 0.8);
     border-radius: 8px;
 }
-
-.volver {
+/*creo que he quitado todos los botones volver al inicio, pero por si acaso dejo el estilo por aquí, no vaya a ser que se me haya escapado alguno*/
+.volver { 
     display: inline-block;
     margin-bottom: 20px;
     padding: 10px 20px;
