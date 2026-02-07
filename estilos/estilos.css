@@ -1245,3 +1245,106 @@ nav a:hover {
     color: #3d2b20;
     margin: 10px 0;
 }
+/*dragon y efectos*/
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=MedievalSharp&display=swap');
+
+:root {
+    --madera: #4e342e;
+    --azul-mary: #a2d2ff;
+    --naranja-anji: #fb8500;
+    --borde: #2d1b10;
+}
+
+/* --- ESTILO DE LA WEB --- */
+body {
+    background-color: #faf0e6;
+    font-family: 'Fredoka', sans-serif;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><text y="28" font-size="32">🐉</text></svg>') 16 16, auto;
+}
+
+/* --- CAPA DEL DRAGÓN (OVERLAY) --- */
+/* --- EFECTO DRAGÓN Y HUIDA --- */
+/* --- CAPA DEL DRAGÓN --- */
+.dragon-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 99999;
+    display: none; /* Se activa por JS */
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.fuego-animado {
+    position: absolute;
+    width: 100%; height: 100%;
+    /* NOMBRE DE TU ARCHIVO DE FUEGO */
+    background: url('../img/fuego.gif') center/cover no-repeat; 
+    opacity: 0;
+}
+
+/* --- CHIBIS HUYENDO --- */
+.contenedor-huida {
+    position: absolute;
+    bottom: 50px;
+    width: 150px; height: 150px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.chibi {
+    width: 100%; height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* NOMBRE DE TUS ARCHIVOS DE PERSONAJES */
+.mary-chibi { background-image: url('../img/chibi-mary.png'); }
+.anji-chibi { background-image: url('../img/chibi-Angi.png'); }
+
+.humo {
+    position: absolute; bottom: 10px; width: 40px; height: 20px;
+    background: rgba(255,255,255,0.4); border-radius: 50%; filter: blur(8px); opacity: 0;
+}
+
+/* --- ANIMACIONES --- */
+.pantalla-quemada .fuego-animado {
+    opacity: 1;
+    animation: aparecerFuego 0.5s forwards;
+}
+
+.pantalla-quemada .mary-box { animation: huidaIzquierda 2s forwards linear; }
+.pantalla-quemada .anji-box { animation: huidaDerecha 2s forwards linear; }
+.pantalla-quemada .humo { animation: rastroHumo 0.2s infinite; }
+
+@keyframes huidaIzquierda { 0% { left: 45%; } 100% { left: -250px; } }
+@keyframes huidaDerecha { 0% { right: 45%; } 100% { right: -250px; } }
+@keyframes rastroHumo { 0% { transform: scale(1); opacity: 0.5; } 100% { transform: scale(2); opacity: 0; } }
+
+@keyframes aparecerFuego {
+    from { transform: translateY(-100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Sacudida del botón */
+.temblor-activo {
+    animation: shake 0.2s infinite;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px); }
+    50% { transform: translate(-2px, -1px); }
+    100% { transform: translate(1px, 1px); }
+}
+
+/* Texto de pánico */
+.texto-quemado {
+    position: relative;
+    z-index: 100;
+    color: black;
+    font-size: 3rem;
+    text-shadow: 4px 4px 4px #cae807;
+    opacity: 0;
+}
+.pantalla-quemada .texto-quemado { opacity: 1; transition: 0.5s; }
