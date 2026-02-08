@@ -1,62 +1,62 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Acceso Empleados - Pantasy</title>
-    <link rel="stylesheet" href="estilos/estilos.css">
-</head>
-<body class="fondo-blanco">
-    <header>
-        <h1>⚔️ Pantasy - Portal de Empleados ⚔️</h1>
-        <nav>
-            <a href="pantasy.html">Inicio</a>
-        </nav>
-    </header>
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Acceso Empleados - Pantasy</title>
+        <link rel="stylesheet" href="estilos/estilos.css">
+    </head>
+    <body class="fondo-blanco">
+        <header>
+            <h1>⚔️ Pantasy - Portal de Empleados ⚔️</h1>
+            <nav>
+                <a href="pantasy.html">Inicio</a>
+            </nav>
+        </header>
 
-    <main>
-        <div class="contenido-pagina contenido-empleados">
-            <div class="formulario-acceso-empleado">
-                <h2>Acceso Empleados</h2>
-                <p>Ingresa tu contraseña de empleado para acceder al panel interno</p>
-                
-                <form id="formulario-empleado" onsubmit="validarAcceso(event)">
-                    <div class="grupo-formulario">
-                        <label for="email-empleado">Correo de Empleado:</label>
-                        <input type="email" id="email-empleado" name="email-empleado" required placeholder="tu.email@pantasy.com">
-                    </div>
+        <main>
+            <div class="contenido-pagina contenido-empleados">
+                <div class="formulario-acceso-empleado">
+                    <h2>Acceso Empleados</h2>
+                    <p>Ingresa tu contraseña de empleado para acceder al panel interno</p>
+                    
+                    <form id="formulario-empleado" onsubmit="validarAcceso(event)">
+                        <div class="grupo-formulario">
+                            <label for="email-empleado">Correo de Empleado:</label>
+                            <input type="email" id="email-empleado" name="email-empleado" required placeholder="tu.email@pantasy.com">
+                        </div>
 
-                    <div class="grupo-formulario">
-                        <label for="password-empleado">Contraseña:</label>
-                        <input type="password" id="password-empleado" name="password-empleado" required placeholder="Ingresa tu contraseña">
-                    </div>
+                        <div class="grupo-formulario">
+                            <label for="password-empleado">Contraseña:</label>
+                            <input type="password" id="password-empleado" name="password-empleado" required placeholder="Ingresa tu contraseña">
+                        </div>
 
-                    <button type="submit" class="boton-enviar">Acceder</button>
-                </form>
+                        <button type="submit" class="boton-enviar">Acceder</button>
+                    </form>
 
-                <p class="ayuda-empleado">¿Problemas de acceso? Contacta con RRHH</p>
+                    <p class="ayuda-empleado">¿Problemas de acceso? Contacta con RRHH</p>
+                </div>
             </div>
-        </div>
-    </main>
+        </main>
 
-    <script>
-        function validarAcceso(event) {
-            event.preventDefault();
-            
-            const email = document.getElementById('email-empleado').value;
-            const password = document.getElementById('password-empleado').value;
-            
-            // Contraseña de demostración (en producción sería en servidor)
-            const contrasenaCorrecta = '12345';
-            
-            if (password === contrasenaCorrecta) {
-                // Guardar sesión en localStorage
-                localStorage.setItem('empleado-loggedin', 'true');
-                localStorage.setItem('empleado-email', email);
-                window.location.href = 'empleado-panel.html';
-            } else {
-                alert('Contraseña incorrecta. Intenta de nuevo.');
+        <script>
+            function validarAcceso(event) {
+                event.preventDefault();
+                
+                const email = document.getElementById('email-empleado').value;
+                const password = document.getElementById('password-empleado').value;
+                
+                // Contraseña de demostración (en producción sería en servidor)
+                const contrasenaCorrecta = '12345';
+                
+                if (password === contrasenaCorrecta) {
+                    // Guardar sesión en localStorage
+                    localStorage.setItem('empleado-loggedin', 'true');
+                    localStorage.setItem('empleado-email', email);
+                    window.location.href = 'empleado-panel.html';
+                } else {
+                    alert('Contraseña incorrecta. Intenta de nuevo.');
+                }
             }
-        }
-    </script>
-</body>
-</html>
+        </script>
+    </body>
+    </html>

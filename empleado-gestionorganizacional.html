@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión Organizacional</title>
+    <link rel="stylesheet" href="estilos/estilos.css">
+</head>
+<body class="fondo-blanco">
+    <header>
+        <h1>⚔️ Pantasy - Gestión Organizacional ⚔️</h1>
+        <nav>
+            <a href="empleado-panel.html">Volver al Panel</a>
+            <a href="#" onclick="cerrarSesion()">Cerrar Sesión</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="contenido-pagina contenido-empleados2">
+            <h2>Gestion Organizacional</h2>
+
+            <div class="back">
+                <div class="comic">
+                    <img src="img/GOimgs/1.jpg.png" width="500"alt="cronicasPantasy">
+                </div>                
+
+                <div class="comic">
+                    <img src="img/GOimgs/2.jpg.png"width="500" alt="">
+                </div>
+                
+                <div class="comic">
+                    <img src="img/GOimgs/4.png"width="500" alt="">
+                </div>
+                <div class="comic">
+                    <img src="img/GOimgs/5.png"width="500" alt="">
+                </div>
+                <div class="comic">
+                    <img src="img/GOimgs/6.png"width="500" alt="">
+                </div>
+                <div class="comic">
+                    <img src="img/GOimgs/7.png"width="500" alt="">
+                </div>
+                <div class="comic">
+                    <img src="img/GOimgs/8.png"width="500" alt="">
+                </div>
+                <div class="comic">
+                    <img src="img/GOimgs/9.png"width="500" alt="">
+                </div>
+                <div class="comic">
+                    <img src="img/GOimgs/10.png"width="500" alt="">
+                </div>
+                <div class="comic">
+                    <img src="img/GOimgs/11.png"width="500" alt="">
+                </div>
+                <div class="comic">
+                    <img src="img/GOimgs/12.png"width="500" alt="">
+                </div>
+                <div class="comic">
+                    <img src="img/GOimgs/13.png"width="500" alt="">
+                </div>
+
+                
+
+                
+            </div>
+
+            
+            
+        </div>
+    </main>
+
+    <script>
+        function verificarSesion() {
+            if (localStorage.getItem('empleado-loggedin') !== 'true') {
+                window.location.href = 'empleado-acceso.html';
+            }
+        }
+
+        function cerrarSesion() {
+            localStorage.removeItem('empleado-loggedin');
+            localStorage.removeItem('empleado-email');
+            window.location.href = 'pantasy.html';
+        }
+
+        verificarSesion();
+    </script>
+     <div class="footer-bottom">
+    <p>&copy; 2026 Pantasy. Todos los derechos reservados.</p>
+    <div class="payment-methods">
+      <span>💳 Visa</span> | <span>💳 Mastercard</span> | <span>🅿️ PayPal</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
